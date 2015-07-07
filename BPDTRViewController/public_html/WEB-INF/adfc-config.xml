@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="index">
+    <page>/index.jspx</page>
+  </view>
+  <managed-bean id="__4">
+    <managed-bean-name id="__1">TableHandlerBean</managed-bean-name>
+    <managed-bean-class id="__3">de.hahn.blog.pojodeletetablerow.view.beans.TableHandlerBean</managed-bean-class>
+    <managed-bean-scope id="__2">view</managed-bean-scope>
+  </managed-bean>
+</adfc-config>

@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:form id="f1">
+        <af:panelStretchLayout topHeight="50px" id="psl1">
+          <f:facet name="top">
+            <af:outputText value="Delete Table Row From List" id="ot1" inlineStyle="font-size:x-large;"/>
+          </f:facet>
+          <f:facet name="center">
+            <af:panelGroupLayout layout="scroll" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" id="pgl1">
+              <af:table value="#{viewScope.TableHandlerBean.phoneInfoList}" var="row" rowBandingInterval="0" id="t1" columnStretching="multiple"
+                        rowSelection="single" varStatus="rowStatus" styleClass="AFStretchWidth">
+                <af:column sortable="false" headerText="Sequence" align="start" id="c1">
+                  <af:outputText value="#{row.sequence}" id="ot4"/>
+                </af:column>
+                <af:column sortable="false" headerText="Phone Type" align="start" id="c3">
+                  <af:outputText value="#{row.phoneType}" id="ot5"/>
+                </af:column>
+                <af:column sortable="false" headerText="Phone Number" align="start" id="c2">
+                  <af:outputText value="#{row.phoneNumber}" id="ot3"/>
+                </af:column>
+                <af:column sortable="false" headerText="Remove" id="c4">
+                  <af:commandButton text="Remove" id="cb1" actionListener="#{viewScope.TableHandlerBean.onRemoveAction}">
+                    <af:setPropertyListener from="#{rowStatus.index}" to="#{viewScope.TableHandlerBean.currentSelectedIndex}" type="action"/>
+                  </af:commandButton>
+                </af:column>
+              </af:table>
+              <af:commandButton text="Refresh" id="cb2"/>
+            </af:panelGroupLayout>
+            <!-- id="af_one_column_header_stretched"  -->
+          </f:facet>
+        </af:panelStretchLayout>
+      </af:form>
+    </af:document>
+  </f:view>
+  <!--oracle-jdev-comment:preferred-managed-bean-name:TableHandlerBean-->
+</jsp:root>
