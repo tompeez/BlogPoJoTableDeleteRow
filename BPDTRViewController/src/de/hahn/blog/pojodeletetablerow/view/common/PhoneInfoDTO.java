@@ -1,5 +1,8 @@
 package de.hahn.blog.pojodeletetablerow.view.common;
 
+/**
+ * DTO for PhoneInfo
+ */
 public class PhoneInfoDTO {
     Integer Sequence;
     String PhoneType;
